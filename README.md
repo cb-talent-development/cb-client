@@ -78,5 +78,5 @@ client.users.delete(external_id)
 
 ### Future
 
-- Add **transformers** array to config, allowing consumer apps to add mapping to all requests and the development of several mapping libraries
+- Add **transformers** array to config, allowing consumer apps to add mapping to all requests, and enabling the development of several mapping libraries
 - Additional endpoints
