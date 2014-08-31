@@ -21,6 +21,14 @@ module CB
         VALID_OPTIONS_KEYS.each{ |name| options[name] = send(name) }
         options
       end
+
+      def api_host
+        ENV['CB_API_HOST'] || @api_host || 'https://api.careerbuilder.com'
+      end
+
+      def debug
+        ENV['CB_DEBUG'] || @debug || false
+      end
     end
   end
 end

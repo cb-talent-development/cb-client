@@ -8,13 +8,15 @@ Gem::Specification.new do |s|
   s.description   = s.summary
   s.authors       = ['Bennett Goble']
   s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec}/**/*`.split("\n")
   s.require_paths = ['lib']
 
   s.add_dependency 'faraday'
   s.add_dependency 'faraday_middleware'
   s.add_dependency 'multi_xml'
   s.add_dependency 'gyoku'
-  s.add_dependency 'plissken'
+
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
+  s.add_development_dependency 'mocha'
 end

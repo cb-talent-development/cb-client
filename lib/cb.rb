@@ -12,9 +12,5 @@ module CB
     def new(client_options={})
       CB::Client.new(client_options)
     end
-
-    def api_host
-      ENV['CB_API_HOST'] || @api_host || 'https://api.careerbuilder.com'
-    end
   end
 end

@@ -16,7 +16,7 @@ module CB
           v2.post(APIs::V2::Endpoints::RESUMES_PARSE, 
             {
               FileName:  name,
-              FilelBytes: bytes
+              FileBytes: bytes
             }
           )
         end
