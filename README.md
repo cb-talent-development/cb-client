@@ -1,6 +1,6 @@
 # cb-client
 
-**CB-Client** is a light-weight Ruby wrapper for [CareerBuilder APIs](http://developer.careerbuilder.com/) built according to [PLA](http://en.wikipedia.org/wiki/Principle_of_least_astonishment). It does not map API requests and responses to classes or augment their keys. Requests are parsed into hashes with native keys.
+**CB-Client** is a light-weight Ruby wrapper for [CareerBuilder APIs](http://developer.careerbuilder.com/) built according to [PLA](http://en.wikipedia.org/wiki/Principle_of_least_astonishment). Requests are parsed into hashes with native keys.
 
 ### Configuration
 
