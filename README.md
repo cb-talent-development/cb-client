@@ -75,3 +75,8 @@ client.users.change_password(external_id, old_password, new_password)
 # V2 Delete
 client.users.delete(external_id)
 ```
+
+### Future
+
+- Add **transformers** array to config, allowing consumer apps to add mapping to all requests and the development of several mapping libraries
+- Additional endpoints
