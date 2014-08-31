@@ -10,7 +10,7 @@ module CB
             req.path = path
             req.body = xml_string(request(properties))
           end
-          build_response(response)
+          build_response_from_xml(response)
         end
 
         module Endpoints
@@ -33,20 +33,6 @@ module CB
               Test:         ENV['CB_TEST'] || false
             }.merge(properties)
           }
-        end
-
-        def build_response(response)
-          success = response.status == 200
-          body    = response.body
-
-          if body.is_a?(Hash)
-            # Step into root node
-            body = body[body.keys.first]
-            # Set success = false if errors are present
-            success = success && !(body.has_key?('Errors') && body['Errors'] != nil)
-          end
-
-          Response.new(response, success, body)
         end
 
         def response_success?(response)

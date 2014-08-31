@@ -28,7 +28,7 @@ module Helpers
   def successful_v1_response
     response = mock()
     response.stubs(:status).returns(200)
-    response.stubs(:body).returns({})
+    response.stubs(:body).returns({'RootNode' => {'Errors' => nil}})
     response
   end
 

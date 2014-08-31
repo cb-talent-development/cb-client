@@ -34,6 +34,21 @@ module CB
             url: options[:api_host]
           }
         end
+
+        # Build response from format shared by most v1 and v2 responses
+        def build_response_from_xml(response)
+          success = response.status == 200
+          body    = response.body
+
+          if body.is_a?(Hash)
+            # Step into root node
+            body = body[body.keys.first]
+            # Set success = false if errors are present
+            success = success && !(body.has_key?('Errors') && body['Errors'] != nil)
+          end
+
+          Response.new(response, success, body)
+        end
       end
     end
   end

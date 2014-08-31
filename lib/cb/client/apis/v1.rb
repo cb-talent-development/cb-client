@@ -5,7 +5,7 @@ module CB
 
         def get(path, query={})
           response = connection.get(path, query.merge(query_params))
-          build_response(response)
+          build_response_from_xml(response)
         end
 
         module Endpoints
@@ -32,10 +32,6 @@ module CB
           {
             DeveloperKey: options[:developer_key]
           }
-        end
-
-        def build_response(response)
-          Response.new(response, response.status == 200, response.body)
         end
       end
     end
