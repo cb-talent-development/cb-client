@@ -78,5 +78,5 @@ client.users.delete(external_id)
 
 ### Future
 
-- **Transformer** pattern for requests/response mapping. By exposing an array of transformer classes the library will enable class/object mappings to be developed and consumed separately.
+- **Transformer** pattern for requests/response mapping. By exposing an array for transformer classes the library will enable class/object mappings to be developed and consumed separately.
 - Additional endpoints
