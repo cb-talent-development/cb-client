@@ -11,6 +11,14 @@ module CB
           )
         end
 
+        def create(params)
+          v2.post(APIs::V2::Endpoints::USERS_CREATE, params)
+        end
+
+        def update(params)
+          v2.post(APIs::V2::Endpoints::USERS_UPDATE, params)
+        end
+
         def temporary_password(external_id)
           v1.get(APIs::V1::Endpoints::USERS_TEMPORARY_PASSWORD, 
             {

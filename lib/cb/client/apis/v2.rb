@@ -14,6 +14,8 @@ module CB
         end
 
         module Endpoints
+          USERS_CREATE          = '/v2/User/create'
+          USERS_UPDATE          = '/v2/User/edit'
           USERS_CHANGE_PASSWORD = '/v2/User/ChangePW'
           USERS_DELETE          = '/v2/User/delete'
           USERS_GET             = '/v2/user/retrieve'
