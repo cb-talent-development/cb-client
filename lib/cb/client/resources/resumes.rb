@@ -15,7 +15,7 @@ module CB
         def parse_from_path(path)
           file  = File.open(path, 'rb')
           name  = File.basename(path)
-          bytes = Base64.encode64(file.read)
+          bytes = file.read
           file.close
           parse_from_bytes(bytes, name)
         end
@@ -24,7 +24,7 @@ module CB
           v2.post(APIs::V2::Endpoints::RESUMES_PARSE, 
             {
               FileName:  file_name,
-              FileBytes: bytes
+              FileBytes: Base64.encode64(bytes)
             }
           )
         end
