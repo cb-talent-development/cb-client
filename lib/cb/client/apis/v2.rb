@@ -7,8 +7,9 @@ module CB
 
         def post(path, properties={})
           response = connection.post do |req|
+            cleaned_properties = clean_request_hash!(properties.clone)
             req.path = path
-            req.body = xml_string(request(properties))
+            req.body = xml_string(request(cleaned_properties))
           end
           build_response_from_xml(response)
         end
@@ -32,7 +33,7 @@ module CB
           {
             Request: {
               DeveloperKey: options[:developer_key],
-              Test:         ENV['CB_TEST'] || false
+              Test:         ENV['CB_TEST'] || 'false'
             }.merge(properties)
           }
         end
@@ -43,6 +44,30 @@ module CB
 
         def xml_string(obj)
           Gyoku.xml(obj, {key_converter: :camelcase})
+        end
+
+        def clean_request_value(value)
+          if value.kind_of?(Hash)
+            clean_request_hash!(value)
+          elsif value.kind_of?(Array)
+            value.compact.map { |v| clean_request_value(v) }
+          elsif !!value == value # If boolean
+            value ? 'true' : 'false'
+          else
+            value
+          end
+        end
+
+        # Perform hash value manipulation to generate valid XML
+        # (ex. gyoku converts nil to xsi:nil so we need to remove nil values)
+        def clean_request_hash!(h)
+          h.each do |k, v|
+            if v.nil?
+              h.delete(k)
+            else
+              h[k] = clean_request_value(v)
+            end
+          end
         end
       end
     end
