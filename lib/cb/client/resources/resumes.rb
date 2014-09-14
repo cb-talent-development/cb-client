@@ -47,7 +47,7 @@ module CB
             r.Test         @options[:test] ? 'true' : 'false'
 
             criteria.select { |k| !CREATE_ELEMENTS_WITH_CHILDREN.include?(k) }.each do |k, v|
-              r.__send__("#{k.to_s.camelize}", v)
+              r.__send__(k.to_s.camelize, v)
             end
 
             r.Languages do |languages|
@@ -90,7 +90,7 @@ module CB
             end
 
             r.Relocations do |relocations|
-              (criteria[:relocations] || {}).each do |criteria_value|
+              (criteria[:relocations] || []).each do |criteria_value|
                 relocations.Relocation do |r|
                   r.WorkStatus criteria_value[:work_status]
                   r.City       criteria_value[:city]
