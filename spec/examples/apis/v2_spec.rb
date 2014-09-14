@@ -42,6 +42,7 @@ describe CB::Client::APIs::V2 do
         response = mock()
         response.stubs(:status).returns(500)
         response.stubs(:body).returns({'RootNode' => {'Errors' => nil}})
+        response.stubs(:env).returns({raw_body: '<RootNode><Errors/></RootNode>'})
         connection.expects(:post).returns(response)
       end
 
@@ -54,6 +55,7 @@ describe CB::Client::APIs::V2 do
         response = mock()
         response.stubs(:status).returns(200)
         response.stubs(:body).returns({'RootNode' => {'Errors' => [{}]}})
+        response.stubs(:env).returns({raw_body: '<RootNode><Errors><Error>error</Error></Errors></RootNode>'})
         connection.expects(:post).returns(response)
       end
 

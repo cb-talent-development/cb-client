@@ -29,6 +29,7 @@ module Helpers
     response = mock()
     response.stubs(:status).returns(200)
     response.stubs(:body).returns({'RootNode' => {'Errors' => nil}})
+    response.stubs(:env).returns({raw_body: '<RootNode><Errors/></RootNode>'})
     response
   end
 
@@ -36,6 +37,7 @@ module Helpers
     response = mock()
     response.stubs(:status).returns(200)
     response.stubs(:body).returns({'RootNode' => {'Errors' => nil}})
+    response.stubs(:env).returns({raw_body: '<RootNode><Errors/></RootNode>'})
     response
   end
 end
