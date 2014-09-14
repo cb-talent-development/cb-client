@@ -15,6 +15,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'faraday_middleware'
   s.add_dependency 'multi_xml'
   s.add_dependency 'gyoku'
+  s.add_dependency 'builder'
+  s.add_dependency 'activesupport-inflector'
+  s.add_dependency 'i18n'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'

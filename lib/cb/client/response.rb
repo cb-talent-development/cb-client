@@ -1,12 +1,13 @@
 module CB
   module Client
     class Response
-      attr_reader :body, :raw
+      attr_reader :body, :raw_body, :faraday_response
 
-      def initialize(raw_response, success, body=nil)
-        @raw     = raw_response
-        @success = success
-        @body    = body || raw_response.body
+      def initialize(response, success, body=nil)
+        @faraday_response = response
+        @raw_body         = response.env[:raw_body]
+        @success          = success
+        @body             = body || response.body
       end
 
       def success?

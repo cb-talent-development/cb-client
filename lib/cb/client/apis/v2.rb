@@ -5,11 +5,17 @@ module CB
     module APIs
       class V2 < APIBase
 
-        def post(path, properties={})
+        def post(path, body={})
           response = connection.post do |req|
-            cleaned_properties = clean_request_hash!(properties.clone)
-            req.path = path
-            req.body = xml_string(request(cleaned_properties))
+            req.path                 = path
+            req.options.preserve_raw = true
+
+            if body.kind_of?(Hash)
+              cleaned_properties = clean_request_hash!(body.clone)
+              req.body = xml_string(request(cleaned_properties))
+            else
+              req.body = body
+            end
           end
           build_response_from_xml(response)
         end
@@ -33,7 +39,7 @@ module CB
           {
             Request: {
               DeveloperKey: options[:developer_key],
-              Test:         ENV['CB_TEST'] || 'false'
+              Test:         options[:debug] ? 'true' : 'false'
             }.merge(properties)
           }
         end

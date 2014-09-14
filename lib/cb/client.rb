@@ -20,9 +20,9 @@ module CB
         @v2 = APIs::V2.new(options)
         @v3 = APIs::V3.new(options)
 
-        @jobs    = Resources::Jobs.new(apis)
-        @users   = Resources::Users.new(apis)
-        @resumes = Resources::Resumes.new(apis)
+        @jobs    = Resources::Jobs.new(apis, options)
+        @users   = Resources::Users.new(apis, options)
+        @resumes = Resources::Resumes.new(apis, options)
       end
 
       private

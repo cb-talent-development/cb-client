@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CB::Client::Resources::Jobs do
 
-  let(:jobs) { CB::Client::Resources::Jobs.new({}) }
+  let(:jobs) { CB::Client::Resources::Jobs.new({}, {}) }
 
   describe '.search' do
     it 'passes criteria to api' do

@@ -1,17 +1,7 @@
 require 'spec_helper'
 
 describe CB::Client::Resources::Resumes do
-  let(:resumes) { CB::Client::Resources::Resumes.new({}) }
-
-  describe '.create' do
-    it 'passes criteria to api' do
-      criteria = {title: 'Resume'}
-      v2 = mock()
-      v2.stubs(:post).with(CB::Client::APIs::V2::Endpoints::RESUMES_CREATE, criteria)
-      resumes.stubs(:v2).returns(v2)
-      resumes.create(criteria)
-    end
-  end
+  let(:resumes) { CB::Client::Resources::Resumes.new({}, {}) }
 
   describe '.parse' do
 
