@@ -11,13 +11,13 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec}/**/*`.split("\n")
   s.require_paths = ['lib']
 
-  s.add_dependency 'faraday'
-  s.add_dependency 'faraday_middleware'
-  s.add_dependency 'multi_xml'
-  s.add_dependency 'gyoku'
-  s.add_dependency 'builder'
-  s.add_dependency 'activesupport-inflector'
-  s.add_dependency 'i18n'
+  s.add_dependency 'faraday', '~> 0.9'
+  s.add_dependency 'faraday_middleware', '~> 0.9'
+  s.add_dependency 'multi_xml', '~> 0.5'
+  s.add_dependency 'gyoku', '~> 1.1'
+  s.add_dependency 'builder', '~> 3.2'
+  s.add_dependency 'activesupport-inflector', '~> 0.1'
+  s.add_dependency 'i18n', '~> 0.6'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec'
