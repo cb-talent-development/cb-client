@@ -62,8 +62,8 @@ module CB
                   e.SchoolName     criteria_value[:school_name]
                   e.Major          criteria_value[:major]
                   e.DegreeCode     criteria_value[:degree_code]
-                  e.GraduationDate criteria_value[:graduation_date]
-                  e.GPA            criteria_value[:gpa]
+                  e.GraduationDate criteria_value[:graduation_date] if criteria_value[:graduation_date]
+                  e.GPA            criteria_value[:gpa]             if criteria_value[:gpa]
                 end
               end
             end
