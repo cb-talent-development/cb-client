@@ -5,7 +5,7 @@ module CB
         def check_existing(email, password)
           v2.post(APIs::V2::Endpoints::USERS_CHECK_EXISTING,
             {
-              Email:    email, 
+              Email:    email,
               Password: password
             }
           )
