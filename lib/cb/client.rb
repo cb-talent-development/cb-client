@@ -7,11 +7,12 @@ require 'cb/client/resources/resource_base'
 require 'cb/client/resources/jobs'
 require 'cb/client/resources/users'
 require 'cb/client/resources/resumes'
+require 'cb/client/resources/applications'
 
 module CB
   module Client
     class Client
-      attr_reader :jobs, :resumes, :users
+      attr_reader :jobs, :resumes, :users, :applications
 
       def initialize(options={})
         options = CB.options.merge(options)
@@ -23,6 +24,7 @@ module CB
         @jobs    = Resources::Jobs.new(apis, options)
         @users   = Resources::Users.new(apis, options)
         @resumes = Resources::Resumes.new(apis, options)
+        @applications = Resources::Applications.new(apis, options)
       end
 
       private

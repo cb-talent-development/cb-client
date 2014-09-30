@@ -76,6 +76,13 @@ client.users.change_password(external_id, old_password, new_password)
 client.users.delete(external_id)
 ```
 
+#### Applications
+
+```ruby
+# V3 Registered Application
+client.applications.registered(job_did, external_user_id, external_resume_id)
+```
+
 ### Future
 
 - **Transformer** pattern for requests/response mapping. By exposing an array for transformer classes the library will enable class/object mappings to be developed and consumed separately.
