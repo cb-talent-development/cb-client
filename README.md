@@ -80,7 +80,10 @@ client.users.delete(external_id)
 
 ```ruby
 # V3 Registered Application
-client.applications.registered(job_did, external_user_id, external_resume_id)
+client.applications.registered({JobDID:            'WDCCCCCCCCCCCCCCCCCC',
+                                ExternalUserID:    'WDDDDDDDDDDDDDDDDDDD',
+                                ExternalResumeID:  'WDEEEEEEEEEEEEEEEEEE'
+                               })
 ```
 
 ### Future
