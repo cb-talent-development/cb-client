@@ -79,7 +79,7 @@ client.users.delete(external_id)
 #### Applications
 
 ```ruby
-# V3 Registered Application
+# V2 Registered Application
 client.applications.registered({JobDID:            'WDCCCCCCCCCCCCCCCCCC',
                                 ExternalUserID:    'WDDDDDDDDDDDDDDDDDDD',
                                 ExternalResumeID:  'WDEEEEEEEEEEEEEEEEEE'

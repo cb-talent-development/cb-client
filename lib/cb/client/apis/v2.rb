@@ -21,16 +21,17 @@ module CB
         end
 
         module Endpoints
-          USERS_CREATE          = '/v2/User/create'
-          USERS_UPDATE          = '/v2/User/edit'
-          USERS_CHANGE_PASSWORD = '/v2/User/ChangePW'
-          USERS_DELETE          = '/v2/User/delete'
-          USERS_GET             = '/v2/user/retrieve'
-          USERS_CHECK_EXISTING  = '/v2/user/checkexisting'
-          SAVED_SEARCHES_CREATE = '/v2/savedsearch/create'
-          SPOT_GET              = '/v2/spot/load'
-          RESUMES_CREATE        = '/v2/resume/create'
-          RESUMES_PARSE         = '/v2/resume/parse'
+          USERS_CREATE            = '/v2/User/create'
+          USERS_UPDATE            = '/v2/User/edit'
+          USERS_CHANGE_PASSWORD   = '/v2/User/ChangePW'
+          USERS_DELETE            = '/v2/User/delete'
+          USERS_GET               = '/v2/user/retrieve'
+          USERS_CHECK_EXISTING    = '/v2/user/checkexisting'
+          SAVED_SEARCHES_CREATE   = '/v2/savedsearch/create'
+          SPOT_GET                = '/v2/spot/load'
+          RESUMES_CREATE          = '/v2/resume/create'
+          RESUMES_PARSE           = '/v2/resume/parse'
+          APPLICATIONS_REGISTERED = '/v2/application/registered'
         end
 
         private
