@@ -3,7 +3,7 @@ module CB
     module Resources
       class Applications < ResourceBase
         def registered(params)
-          v3.post(APIs::V3::Endpoints::APPLICATIONS_REGISTERED, params)
+          v2.post(APIs::V2::Endpoints::APPLICATIONS_REGISTERED, params)
         end
       end
     end
