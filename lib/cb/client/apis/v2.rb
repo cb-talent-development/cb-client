@@ -4,8 +4,7 @@ module CB
   module Client
     module APIs
       class V2 < APIBase
-
-        def post(path, body={})
+        def post(path, body = {})
           response = connection.post do |req|
             req.path                 = path
             req.options.preserve_raw = true
@@ -36,7 +35,7 @@ module CB
 
         private
 
-        def request(properties={})
+        def request(properties = {})
           {
             Request: {
               DeveloperKey: options[:developer_key],
@@ -50,7 +49,7 @@ module CB
         end
 
         def xml_string(obj)
-          Gyoku.xml(obj, {key_converter: :camelcase})
+          Gyoku.xml(obj, key_converter: :camelcase)
         end
 
         def clean_request_value(value)

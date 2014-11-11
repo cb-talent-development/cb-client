@@ -2,8 +2,7 @@ module CB
   module Client
     module APIs
       class V1 < APIBase
-
-        def get(path, query={})
+        def get(path, query = {})
           response = connection.get(path, query.merge(query_params))
           build_response_from_xml(response)
         end

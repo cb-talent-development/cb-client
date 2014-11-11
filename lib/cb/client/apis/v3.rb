@@ -3,7 +3,7 @@ module CB
     module APIs
       class V3 < APIBase
         module Endpoints
-          JOBS_GET                = '/v3/Job'
+          JOBS_GET = '/v3/Job'
         end
       end
     end

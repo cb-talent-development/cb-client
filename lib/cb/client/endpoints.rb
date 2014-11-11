@@ -1,9 +1,7 @@
 module CB
   module Client
     module Endpoints
-
       # Here lies the API graveyard
-
       module EmployersEndpoints
         GET                             = '/Employer/CompanyDetails'
         RECOMMENDATIONS                 = '/Employer/JobRecommendation'

@@ -8,6 +8,7 @@ module CB
         end
 
         protected
+        
         attr_accessor :v1, :v2, :v3
       end
     end

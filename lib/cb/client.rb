@@ -14,7 +14,7 @@ module CB
     class Client
       attr_reader :jobs, :resumes, :users, :applications
 
-      def initialize(options={})
+      def initialize(options = {})
         options = CB.options.merge(options)
 
         @v1 = APIs::V1.new(options)
@@ -30,12 +30,12 @@ module CB
       private
 
       def apis
-        {v1: @v1, v2: @v2, v3: @v3}
+        { v1: @v1, v2: @v2, v3: @v3 }
       end
     end
 
     class << self
-      def new(options={})
+      def new(options = {})
         Client.new(options)
       end
     end

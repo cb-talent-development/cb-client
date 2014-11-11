@@ -23,12 +23,7 @@ module CB
         end
 
         def parse_from_bytes(bytes, file_name)
-          v2.post(APIs::V2::Endpoints::RESUMES_PARSE, 
-            {
-              FileName:  file_name,
-              FileBytes: Base64.encode64(bytes)
-            }
-          )
+          v2.post(APIs::V2::Endpoints::RESUMES_PARSE, FileName: file_name, FileBytes: Base64.encode64(bytes))
         end
 
         private
@@ -46,6 +41,7 @@ module CB
             r.DeveloperKey @options[:developer_key]
             r.Test         @options[:test] ? 'true' : 'false'
 
+            # Copy leaves
             criteria.select { |k| !CREATE_ELEMENTS_WITH_CHILDREN.include?(k) }.each do |k, v|
               r.__send__(k.to_s.camelize, v)
             end
@@ -91,12 +87,12 @@ module CB
 
             r.Relocations do |relocations|
               (criteria[:relocations] || []).each do |criteria_value|
-                relocations.Relocation do |r|
-                  r.WorkStatus criteria_value[:work_status]
-                  r.City       criteria_value[:city]
-                  r.State      criteria_value[:state]
-                  r.Country    criteria_value[:country]
-                  r.Zipcode    criteria_value[:zipcode]
+                relocations.Relocation do |relocation|
+                  relocation.WorkStatus criteria_value[:work_status]
+                  relocation.City       criteria_value[:city]
+                  relocation.State      criteria_value[:state]
+                  relocation.Country    criteria_value[:country]
+                  relocation.Zipcode    criteria_value[:zipcode]
                 end
               end
             end

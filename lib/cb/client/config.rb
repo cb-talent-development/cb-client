@@ -1,7 +1,6 @@
 module CB
   module Client
     module Config
-
       VALID_OPTIONS_KEYS = [
         :developer_key,
         :client,
@@ -18,7 +17,7 @@ module CB
 
       def options
         options = {}
-        VALID_OPTIONS_KEYS.each{ |name| options[name] = send(name) }
+        VALID_OPTIONS_KEYS.each { |name| options[name] = send(name) }
         options
       end
 
