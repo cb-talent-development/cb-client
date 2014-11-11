@@ -13,11 +13,11 @@ module CB
 
         attr_accessor :options
 
-        def connection(connection_options={})
+        def connection(connection_options = {})
           conn_options = default_connection_options.merge(connection_options)
           Faraday.new(options[:api_host], conn_options) do |conn|
             conn.adapter faraday_client
-            conn.response :xml, :content_type => /\bxml$/
+            conn.response :xml, content_type: /\bxml$/
           end
         end
 
