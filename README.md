@@ -2,6 +2,8 @@
 
 **CB-Client** is a light-weight Ruby wrapper for [CareerBuilder APIs](http://developer.careerbuilder.com/) built according to [PLA](http://en.wikipedia.org/wiki/Principle_of_least_astonishment). Requests are parsed into hashes with native keys.
 
+For a ruby client with greater API and more pre/post processing niceties see [ruby-cb-api](https://github.com/cbdr/ruby-cb-api).
+
 ### Configuration
 
 The library may be configured globally or on a per-instance basis.
@@ -80,13 +82,11 @@ client.users.delete(external_id)
 
 ```ruby
 # V2 Registered Application
-client.applications.registered({JobDID:            'WDCCCCCCCCCCCCCCCCCC',
-                                ExternalUserID:    'WDDDDDDDDDDDDDDDDDDD',
-                                ExternalResumeID:  'WDEEEEEEEEEEEEEEEEEE'
-                               })
+client.applications.registered({JobDID:           'WDCCCCCCCCCCCCCCCCCC',
+                                ExternalUserID:   'WDDDDDDDDDDDDDDDDDDD',
+                                ExternalResumeID: 'WDEEEEEEEEEEEEEEEEEE'})
 ```
 
 ### Future
 
-- **Transformer** pattern for requests/response mapping. By exposing an array for transformer classes the library will enable class/object mappings to be developed and consumed separately.
-- Additional endpoints
+- Rebuild with middleware pattern (Q4 2014 - Q1 2015)
