@@ -2,7 +2,7 @@
 
 **CB-Client** is a light-weight Ruby wrapper for [CareerBuilder APIs](http://developer.careerbuilder.com/) built according to [PLA](http://en.wikipedia.org/wiki/Principle_of_least_astonishment). Requests are parsed into hashes with native keys.
 
-For a ruby client with greater API and more pre/post processing niceties see [ruby-cb-api](https://github.com/cbdr/ruby-cb-api).
+For a ruby client with greater API coverage and more pre/post processing niceties see [ruby-cb-api](https://github.com/cbdr/ruby-cb-api).
 
 ### Configuration
 
