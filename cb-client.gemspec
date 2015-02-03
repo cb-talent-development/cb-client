@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'multi_xml', '~> 0.5'
   s.add_dependency 'gyoku', '~> 1.1'
   s.add_dependency 'builder', '~> 3.2'
-  s.add_dependency 'activesupport-inflector', '~> 0.1'
   s.add_dependency 'i18n', '~> 0.6'
 
   s.add_development_dependency 'rake', '~> 10.3'
