@@ -1,3 +1,4 @@
+require 'cb/client/helpers/string'
 require 'cb/client/apis/api_base'
 require 'cb/client/apis/v1'
 require 'cb/client/apis/v2'
