@@ -13,6 +13,7 @@ module CB
           def build_create_request(criteria)
             xml = Builder::XmlMarkup.new
             xml.Request do |r|
+              @options = CB.options
               r.DeveloperKey @options[:developer_key]
               r.Test         @options[:test] ? 'true' : 'false'
 
