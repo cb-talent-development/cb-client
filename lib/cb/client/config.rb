@@ -5,7 +5,8 @@ module CB
         :developer_key,
         :client,
         :api_host,
-        :debug
+        :debug,
+        :test
       ]
 
       attr_accessor *VALID_OPTIONS_KEYS
